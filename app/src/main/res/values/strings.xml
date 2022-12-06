@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">barcode-software</string>
+    <string name="app_name">EmployeeCode</string>
+    <string name="home_name">Home</string>
+    <string name="scanner_name">Scanner</string>
+    <string name="create_employee">Registration</string>
+    <string name="save">Save</string>
+    <string name="employee_code_hint">Employee code</string>
+    <string name="first_name_hint">First name</string>
+    <string name="last_name_hint">Last name</string>
+    <string name="position_hint">Position</string>
+    <string name="issued_date_hint">Issued date</string>
+    <string name="expired_date_hint">Expired date</string>
+    <string name="submit">Submit</string>
 </resources>

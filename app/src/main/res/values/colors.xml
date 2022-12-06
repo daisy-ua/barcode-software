@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="amazon">#498360</color>
+    <color name="shiny_shamrock">#62A77E</color>
+    <color name="prussian_blue">#1C3144</color>
+    <color name="ivory">#F5F5F5</color>
 </resources>

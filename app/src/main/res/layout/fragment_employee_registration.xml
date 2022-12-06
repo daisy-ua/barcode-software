@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.EmployeeRegistrationFragment">
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/ic_back_24"
+        android:backgroundTint="@color/prussian_blue"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="@id/page_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/page_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="36dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/create_employee"
+        android:textColor="@color/prussian_blue"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toRightOf="@id/back_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--        Profile image-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profile_image_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/page_title">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profile_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="24dp"
+            android:adjustViewBounds="true"
+            android:background="@color/ivory"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+            app:strokeColor="@color/amazon"
+            app:strokeWidth="2dp" />
+
+        <ImageView
+            android:id="@+id/no_image_icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_person_24"
+            app:layout_constraintBottom_toBottomOf="@id/profile_image"
+            app:layout_constraintLeft_toLeftOf="@id/profile_image"
+            app:layout_constraintRight_toRightOf="@id/profile_image"
+            app:layout_constraintTop_toTopOf="@id/profile_image" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    Id code region   -->
+
+    <ImageView
+        android:id="@+id/id_code_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        android:alpha="0.8"
+        android:background="@drawable/ic_numbers_24"
+        android:backgroundTint="@color/prussian_blue"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/id_code_layout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/id_code_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        android:hint="@string/employee_code_hint"
+        app:counterEnabled="true"
+        app:counterMaxLength="6"
+        app:errorEnabled="true"
+        app:layout_constraintLeft_toRightOf="@id/id_code_title"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_image_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/id_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="6" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--    Name region   -->
+
+    <ImageView
+        android:id="@+id/name_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        android:alpha="0.8"
+        android:background="@drawable/ic_person_24"
+        android:backgroundTint="@color/prussian_blue"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/first_name_layout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/first_name_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="6dp"
+        android:hint="@string/first_name_hint"
+        app:layout_constraintLeft_toRightOf="@id/name_title"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_code_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:maxLength="30" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/last_name_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="@string/last_name_hint"
+        app:layout_constraintLeft_toLeftOf="@id/first_name_layout"
+        app:layout_constraintRight_toRightOf="@id/first_name_layout"
+        app:layout_constraintTop_toBottomOf="@id/first_name_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/last_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:maxLength="30" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--    Work region -->
+
+    <ImageView
+        android:id="@+id/work_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        android:alpha="0.8"
+        android:background="@drawable/ic_work_24"
+        android:backgroundTint="@color/prussian_blue"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/work_layout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/work_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        android:hint="@string/position_hint"
+        app:layout_constraintLeft_toRightOf="@id/work_title"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/last_name_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/work_position"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="50" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!--    Date region-->
+
+    <ImageView
+        android:id="@+id/date_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        android:alpha="0.8"
+        android:background="@drawable/ic_calendar_24"
+        android:backgroundTint="@color/prussian_blue"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/issued_date_layout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/issued_date_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        android:hint="@string/issued_date_hint"
+        app:layout_constraintLeft_toRightOf="@id/date_title"
+        app:layout_constraintRight_toLeftOf="@id/expired_date_layout"
+        app:layout_constraintTop_toBottomOf="@id/work_layout"
+        app:layout_constraintVertical_weight="1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/issued_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/expired_date_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/expired_date_hint"
+        app:layout_constraintLeft_toRightOf="@id/issued_date_layout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/issued_date_layout"
+        app:layout_constraintVertical_weight="1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/expired_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--    Submit button-->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="12dp"
+        android:padding="16dp"
+        android:text="@string/submit"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

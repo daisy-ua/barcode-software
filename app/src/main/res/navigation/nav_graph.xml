@@ -7,8 +7,15 @@
 
     <fragment
         android:id="@+id/home_fragment"
-        android:name="com.daisy.barcode_software.ui.HomeFragment"
+        android:name="com.daisy.barcode_software.ui.home.HomeFragment"
         tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/home_to_registration"
+            app:destination="@id/registration_fragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/registration_fragment"
+        android:name="com.daisy.barcode_software.ui.registration.EmployeeRegistrationFragment"
+        tools:layout="@layout/fragment_employee_registration"/>
 </navigation>

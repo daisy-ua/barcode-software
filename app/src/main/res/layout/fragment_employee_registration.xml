@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.EmployeeRegistrationFragment">
+    tools:context=".ui.registration.EmployeeRegistrationFragment">
 
     <ImageView
         android:id="@+id/back_btn"
@@ -96,9 +96,6 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="24dp"
         android:hint="@string/employee_code_hint"
-        app:counterEnabled="true"
-        app:counterMaxLength="6"
-        app:errorEnabled="true"
         app:layout_constraintLeft_toRightOf="@id/id_code_title"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_image_layout">
@@ -107,7 +104,9 @@
             android:id="@+id/id_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="6" />
+            android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-.$/+% "
+            android:inputType="textCapCharacters"
+            android:maxLength="6" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!--    Name region   -->
@@ -131,7 +130,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="24dp"
         android:hint="@string/first_name_hint"
         app:layout_constraintLeft_toRightOf="@id/name_title"
         app:layout_constraintRight_toRightOf="parent"
@@ -195,6 +194,7 @@
             android:id="@+id/work_position"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
             android:maxLength="50" />
     </com.google.android.material.textfield.TextInputLayout>
 

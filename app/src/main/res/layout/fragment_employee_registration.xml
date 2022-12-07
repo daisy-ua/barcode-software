@@ -15,12 +15,12 @@
         android:background="@drawable/ic_back_24"
         android:backgroundTint="@color/prussian_blue"
         android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="@id/page_title"
+        app:layout_constraintBottom_toBottomOf="@id/id_code_page_title"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/page_title"
+        android:id="@+id/id_code_page_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/page_title">
+        app:layout_constraintTop_toBottomOf="@id/id_code_page_title">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/profile_image"

@@ -50,5 +50,8 @@ class HomeFragment : Fragment(), Interaction {
         binding = null
     }
 
-    override fun onItemClicked(id: String) {}
+    override fun onItemClicked(id: String) {
+        val action = HomeFragmentDirections.homeToDetails(id)
+        findNavController().navigate(action)
+    }
 }

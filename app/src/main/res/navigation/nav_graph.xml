@@ -12,10 +12,22 @@
         <action
             android:id="@+id/home_to_registration"
             app:destination="@id/registration_fragment" />
+        <action
+            android:id="@+id/home_to_details"
+            app:destination="@id/details_fragment"/>
     </fragment>
 
     <fragment
         android:id="@+id/registration_fragment"
         android:name="com.daisy.barcode_software.ui.registration.EmployeeRegistrationFragment"
         tools:layout="@layout/fragment_employee_registration"/>
+
+    <fragment
+        android:id="@+id/details_fragment"
+        android:name="com.daisy.barcode_software.ui.details.EmployeeDetailsFragment"
+        tools:layout="@layout/fragment_employee_details">
+        <argument
+            android:name="uid"
+            app:argType="string"/>
+    </fragment>
 </navigation>

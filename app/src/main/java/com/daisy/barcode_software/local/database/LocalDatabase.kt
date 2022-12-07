@@ -5,7 +5,6 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.daisy.barcode_software.local.converters.DateConverter
 import com.daisy.barcode_software.local.converters.DateTimeConverter
 import com.daisy.barcode_software.local.dao.BarcodeDao
 import com.daisy.barcode_software.local.dao.BarcodeInfoDao
@@ -20,7 +19,7 @@ import com.daisy.barcode_software.local.models.BarcodeInfo
     version = 1,
     exportSchema = false
 )
-@TypeConverters(DateTimeConverter::class, DateConverter::class)
+@TypeConverters(DateTimeConverter::class)
 abstract class LocalDatabase : RoomDatabase() {
     abstract fun barcodeDao(): BarcodeDao
 

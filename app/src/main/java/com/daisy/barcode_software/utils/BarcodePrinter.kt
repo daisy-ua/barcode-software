@@ -47,6 +47,8 @@ open class BarcodePrinter(
         val topPos = yOffset * barWidth
         val bottomPos = top + barHeight
 
+        canvas.drawColor(Color.WHITE)
+
         paint.color = Color.WHITE
         canvas.drawRect(leftPos, topPos, leftPos + quiteZoneWidth, bottomPos, paint)
         leftPos += quiteZoneWidth

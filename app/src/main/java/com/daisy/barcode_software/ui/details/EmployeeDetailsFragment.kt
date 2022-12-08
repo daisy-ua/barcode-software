@@ -10,10 +10,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.daisy.barcode_software.R
 import com.daisy.barcode_software.databinding.FragmentEmployeeDetailsBinding
 import com.daisy.barcode_software.local.models.BarcodeInfo
 import com.daisy.barcode_software.utils.BarcodePrinter
 import com.daisy.barcode_software.utils.printBarcodeToBitmap
+import com.daisy.barcode_software.utils.saveImage
 
 
 class EmployeeDetailsFragment : Fragment() {
@@ -76,13 +78,17 @@ class EmployeeDetailsFragment : Fragment() {
 
             saveBtn.setOnClickListener {
                 viewModel.barcodeBinary.value?.let { binary ->
-                    val bitmap = printBarcodeToBitmap(
+                    printBarcodeToBitmap(
                         requireContext(),
                         barcodeView.width,
                         barcodeView.height,
                         binary,
                         "*${args.uid}*"
-                    )
+                    )?.let { bitmap ->
+                        if (saveImage(requireContext(), bitmap, args.uid)) {
+                            saveBtn.setBackgroundResource(R.drawable.ic_download_done_24)
+                        }
+                    }
                 }
             }
         }

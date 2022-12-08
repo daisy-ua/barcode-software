@@ -33,8 +33,9 @@ class BarcodeRepository(application: Application) {
             barcodeInfoDao.getInfoById(key)
         }
 
-    suspend fun insertBarcode(barcode: Barcode, barcodeInfo: BarcodeInfo) {
-        barcodeDao.insertBarcode(barcode)
-        barcodeInfoDao.insertInfo(barcodeInfo)
-    }
+    suspend fun insertBarcode(barcode: Barcode, barcodeInfo: BarcodeInfo) =
+        withContext(Dispatchers.IO) {
+            barcodeDao.insertBarcode(barcode)
+            barcodeInfoDao.insertInfo(barcodeInfo)
+        }
 }

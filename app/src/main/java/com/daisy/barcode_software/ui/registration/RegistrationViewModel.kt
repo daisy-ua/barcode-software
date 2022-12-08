@@ -7,7 +7,6 @@ import com.daisy.barcode_software.core.Code39Encoder
 import com.daisy.barcode_software.local.models.Barcode
 import com.daisy.barcode_software.local.models.BarcodeInfo
 import com.daisy.barcode_software.repository.BarcodeRepository
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.time.LocalDateTime
 
@@ -37,7 +36,7 @@ class RegistrationViewModel(application: Application) : AndroidViewModel(applica
                 expiredDate,
                 profileImg)
 
-            viewModelScope.launch(Dispatchers.IO) {
+            viewModelScope.launch {
                 repository.insertBarcode(barcode, barcodeInfo)
             }
         }

@@ -14,4 +14,10 @@
     <string name="id_no_field">ID NO:</string>
     <string name="issued_field">ISSUED:</string>
     <string name="expired_field">EXPIRED:</string>
+    <string name="scanner">Scanner</string>
+    <string name="no_barcodes_found">No barcodes found.</string>
+    <string name="not_registered_barcode">This barcode is not registered.</string>
+    <string name="upload_file">Upload file</string>
+    <string name="check_digit_field">CHECK DIGIT:</string>
+    <string name="show_details">Show Details</string>
 </resources>

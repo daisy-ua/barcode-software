@@ -30,4 +30,13 @@
             android:name="uid"
             app:argType="string"/>
     </fragment>
+
+    <fragment
+        android:id="@+id/scanner_fragment"
+        android:name="com.daisy.barcode_software.ui.scanner.ScannerFragment"
+        tools:layout="@layout/fragment_scanner">
+        <action
+            android:id="@+id/scanner_to_details"
+            app:destination="@id/details_fragment"/>
+    </fragment>
 </navigation>

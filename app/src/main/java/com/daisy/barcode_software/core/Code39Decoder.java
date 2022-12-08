@@ -4,7 +4,7 @@ import static com.daisy.barcode_software.core.Code39Constants.CHARACTER_SET;
 import static com.daisy.barcode_software.core.Code39Constants.CODE_39_TABLE;
 
 public class Code39Decoder extends Code39Base {
-    private String decodedString;
+    private String decodedString = null;
 
     public String decode(String binaryData) throws Exception {
         int index = 0;

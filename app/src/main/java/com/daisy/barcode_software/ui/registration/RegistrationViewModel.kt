@@ -16,6 +16,7 @@ class RegistrationViewModel(application: Application) : AndroidViewModel(applica
     private var generator: Code39Encoder? = null
 
     private val barcodeBinary get() = generator?.encodedData
+    private val checkDigit get() = generator?.checkDigit
 
     fun insertBarcode(
         idCode: String,
@@ -27,7 +28,7 @@ class RegistrationViewModel(application: Application) : AndroidViewModel(applica
         profileImg: String,
     ) {
         barcodeBinary?.let { binary ->
-            val barcode = Barcode(idCode, binary, LocalDateTime.now())
+            val barcode = Barcode(idCode + checkDigit, idCode, binary, LocalDateTime.now())
             val barcodeInfo = BarcodeInfo(idCode,
                 firstName,
                 lastName,

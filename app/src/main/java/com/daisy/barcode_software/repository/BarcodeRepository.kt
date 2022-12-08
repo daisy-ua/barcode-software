@@ -28,6 +28,11 @@ class BarcodeRepository(application: Application) {
             barcodeDao.getBarcodeBinary(key)
         }
 
+    suspend fun getBarcodeBinaryById(id: String): String =
+        withContext(Dispatchers.IO) {
+            barcodeDao.getBarcodeBinaryById(id)
+        }
+
     suspend fun getBarcodeInfo(key: String): BarcodeInfo =
         withContext(Dispatchers.IO) {
             barcodeInfoDao.getInfoById(key)

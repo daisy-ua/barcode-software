@@ -15,6 +15,9 @@ interface BarcodeDao {
     @Query("SELECT binary_code FROM barcode WHERE code == :code")
     suspend fun getBarcodeBinary(code: String): String
 
+    @Query("SELECT binary_code FROM barcode WHERE uid == :uid")
+    suspend fun getBarcodeBinaryById(uid: String): String
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertBarcode(barcode: Barcode)
 }

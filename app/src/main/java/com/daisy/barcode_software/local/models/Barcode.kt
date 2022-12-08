@@ -7,7 +7,9 @@ import java.time.LocalDateTime
 
 @Entity
 data class Barcode(
-    @PrimaryKey val code: String,
+    @PrimaryKey val uid: String,
+
+    @ColumnInfo val code: String,
 
     @ColumnInfo(name = "binary_code") val binaryCode: String,
 

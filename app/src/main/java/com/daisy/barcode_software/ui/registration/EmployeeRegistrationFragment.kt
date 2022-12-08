@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -30,8 +29,8 @@ class EmployeeRegistrationFragment : Fragment() {
 
     private var inputDataHasError: Boolean = false
 
-    private val selectImageFromGalleryResult: ActivityResultLauncher<String> =
-        registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+    private val selectImageFromGalleryResult =
+        registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri: Uri? ->
             uri?.let {
                 binding?.apply {
                     profileImage.setImageURI(uri)
@@ -168,7 +167,9 @@ class EmployeeRegistrationFragment : Fragment() {
         }
     }
 
-    private fun selectImageFromGallery() = selectImageFromGalleryResult.launch("image/*")
+    private fun selectImageFromGallery() = selectImageFromGalleryResult.launch(arrayOf(
+        "image/*"
+    ))
 
     private fun getDatePickerInstance(): MaterialDatePicker<Long> {
         return MaterialDatePicker.Builder.datePicker()

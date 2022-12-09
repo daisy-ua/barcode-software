@@ -66,6 +66,7 @@ class EmployeeDetailsFragment : Fragment() {
         viewModel.barcodeBinary.observe(viewLifecycleOwner) { binary ->
             barcodePrinter?.let { printer ->
                 printer.setBinaryData(binary)
+                (printer.parent as? ViewGroup)?.removeView(printer)
                 binding!!.barcodeView.addView(printer)
             }
         }
